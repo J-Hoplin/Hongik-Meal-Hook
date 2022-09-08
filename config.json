@@ -2,13 +2,13 @@
     "discord" : {
         "scheduler_expression":"* * * * *",
         "meal_alert_endpoints" : [
-            "your discord webhook endpoint"
+            "your webhook endpoint"
         ]
     },
     "slack" : {
         "scheduler_expression":"* * * * *",
         "meal_alert_endpoints" : [
-
+            "your webhook endpoint"
         ]
     }
 }

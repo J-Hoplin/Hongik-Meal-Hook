@@ -9,42 +9,34 @@ const addZeroUnderTen = (number) => {
     }
 }
 
-const hexColorCodeDecimal = (hex) => {
-    return parseInt(hex,16)
-}
-
 module.exports.embedBuilder = (res) => {
     const now = new Date()
     const todayStringfy = `${now.getFullYear()}년 ${addZeroUnderTen(now.getMonth() + 1)}월 ${addZeroUnderTen(now.getDate())}일 학식정보`
-    // For debuging
-    // res = Codes.weekendMsg
-    
-    // If weekend
+
+    res = Codes.weekendMsg
     if(res.status === Codes.weekend){
         return {
-            "embeds" : [
+            "attachments" : [
                 {
                     "title" : todayStringfy,
-                    "description" : `[B동 학식 정보입니다](https://sj.hongik.ac.kr/site/food/food_menu.html) - ${res.msg}`,
-                    "color" : hexColorCodeDecimal(embedConfig.colors.warning),
-                    "footer" : {
-                        "text" : embedConfig.footer.text,
-                        "icon_url" : embedConfig.footer.url
-                    }
+                    "color" : `#${embedConfig.colors.warning}`,
+                    "text" : `B동 학식 정보입니다 : https://sj.hongik.ac.kr/site/food/food_menu.html - ${res.msg}`,
+                    "footer" : embedConfig.footer.text,
+                    "footer_icon" : embedConfig.footer.url
                 }
-            ],
+            ]
         }
     }else{
         let [lunch, dinner] = res.msg[now.getDay()]
         return {
-            "embeds" : [
+            "attachments" : [
                 {
                     "title" : todayStringfy,
-                    "description" : "[B동 학식 정보입니다](https://sj.hongik.ac.kr/site/food/food_menu.html)",
-                    "color" : hexColorCodeDecimal(embedConfig.colors.normal),
+                    "color" : `#${embedConfig.colors.normal}`,
+                    "text" : `B동 학식 정보입니다 : https://sj.hongik.ac.kr/site/food/food_menu.html`,
                     "fields" : [
                         {
-                            "name" : "중식",
+                            "title" : "중식",
                             "value" : (() => {
                                 return lunch.length <= 0
                                 ? Codes.notReady
@@ -52,7 +44,7 @@ module.exports.embedBuilder = (res) => {
                             })()
                         },
                         {
-                            "name" : "석식",
+                            "title" : "석식",
                             "value" : (() => {
                                 return dinner.length <=0
                                 ? Codes.notReady
@@ -60,10 +52,8 @@ module.exports.embedBuilder = (res) => {
                             })()
                         }
                     ],
-                    "footer" : {
-                        "text" : embedConfig.footer.text,
-                        "icon_url" : embedConfig.footer.url
-                    }
+                    "footer" : embedConfig.footer.text,
+                    "footer_icon" : embedConfig.footer.url
                 }
             ]
         }
@@ -72,20 +62,18 @@ module.exports.embedBuilder = (res) => {
 
 module.exports.errorEmbedBuilder = (res) => {
     return {
-        "embeds" : [
+        "attachments" : [
             {
                 "title" : embedConfig.error.title,
-                "color" : hexColorCodeDecimal(embedConfig.colors.error),
-                "fields": [
+                "color" : `#${embedConfig.colors.error}`,
+                "fields" : [
                     {
-                        "name" : embedConfig.error['field-title'],
+                        "title" : embedConfig.error['field-title'],
                         "value" : res
                     }
                 ],
-                "footer" : {
-                    "text" : embedConfig.footer.text,
-                    "icon_url" : embedConfig.footer.url
-                }
+                "footer" : embedConfig.footer.text,
+                "footer_icon" : embedConfig.footer.url
             }
         ]
     }
