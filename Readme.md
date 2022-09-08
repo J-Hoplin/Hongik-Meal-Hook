@@ -17,11 +17,14 @@ Weather Hook for Discord and Slack
 
 ```bash
 docker build -t (image name) .
-
+```
+```
 docker run exec -it -d -v $(pwd):/apps --name (container name) (image name) bash
-
+```
+```
 docker exec -it (container name) bash
-
+```
+```
 # In container : Consider as after you enter your webhook endpoint to config
 
 # Discord
