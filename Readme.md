@@ -1,4 +1,4 @@
-Weather Hook for Discord and Slack
+Hongik Univ. Sejong Meal-Hook for Discord and Slack
 ===
 ***
 **[Discord](https://discord.com/)와 [Slack](https://slack.com/intl/ko-kr/) 플랫폼을 위한 홍익대학교 학식정보 웹훅 소스코드입니다**
