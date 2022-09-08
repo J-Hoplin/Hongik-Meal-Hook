@@ -19,7 +19,7 @@ Weather Hook for Discord and Slack
 docker build -t (image name) .
 ```
 ```
-docker run exec -it -d -v $(pwd):/apps --name (container name) (image name) bash
+docker run -it -d -v $(pwd):/apps --name (container name) (image name) bash
 ```
 ```
 docker exec -it (container name) bash
