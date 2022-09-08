@@ -27,6 +27,7 @@ docker exec -it (container name) bash
 ```
 # In container : Consider as after you enter your webhook endpoint to config
 
+npm install
 # Discord
 npm run run-discord 
 # Slack
