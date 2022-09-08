@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "run-discord" : "node platform/discord/app.js"
+    "run-discord" : "node platform/discord/app.js",
+    "run-slack" : "node platform/slack/app.js"
   },
   "keywords": [],
   "author": "",
