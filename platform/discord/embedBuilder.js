@@ -44,7 +44,7 @@ module.exports.embedBuilder = (res) => {
                     "color" : hexColorCodeDecimal(embedConfig.colors.normal),
                     "fields" : [
                         {
-                            "name" : "중식",
+                            "name" : "**[ 중식 ]**",
                             "value" : (() => {
                                 return lunch.length <= 0
                                 ? Codes.notReady
@@ -52,7 +52,7 @@ module.exports.embedBuilder = (res) => {
                             })()
                         },
                         {
-                            "name" : "석식",
+                            "name" : "**[ 석식 ]**",
                             "value" : (() => {
                                 return dinner.length <=0
                                 ? Codes.notReady
