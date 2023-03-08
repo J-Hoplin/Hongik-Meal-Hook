@@ -45,7 +45,7 @@ Hongik Univ. Sejong Meal-Hook for Discord and Slack
     - Mountable container volume
         - /app/dist/logfile : logfiles directory
     ```bash
-    docker run -d --name (container name) -e -v (location you want to mount):/app/dist/logfile (image name)
+    docker run -d --name (container name) -v (location you want to mount):/app/dist/logfile (image name)
     ```
 ***
 ## How to contribute?
